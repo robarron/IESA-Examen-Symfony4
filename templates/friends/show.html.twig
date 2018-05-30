@@ -1,0 +1,38 @@
+{% extends 'base.html.twig' %}
+
+{% block title %}Friends{% endblock %}
+
+{% block body %}
+    <h1>Friends</h1>
+
+    <table class="table">
+        <tbody>
+            <tr>
+                <th>Id</th>
+                <td>{{ friend.id }}</td>
+            </tr>
+            <tr>
+                <th>Firstname</th>
+                <td>{{ friend.firstname }}</td>
+            </tr>
+            <tr>
+                <th>Lastname</th>
+                <td>{{ friend.lastname }}</td>
+            </tr>
+            <tr>
+                <th>Sexe</th>
+                <td>{{ friend.sexe }}</td>
+            </tr>
+            <tr>
+                <th>Age</th>
+                <td>{{ friend.age }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <a href="{{ path('friends_index') }}">back to list</a>
+
+    <a href="{{ path('friends_edit', {'id': friend.id}) }}">edit</a>
+
+    {{ include('friends/_delete_form.html.twig') }}
+{% endblock %}

@@ -1,0 +1,39 @@
+App\Entity\Product:
+  product_{1..20}:
+    label: <name()>
+    user: '@user_*'
+
+App\Entity\Friends:
+  friends_{1..20}:
+    firstname: <name()>
+    lastname: <name()>
+    sexe: <name()>
+    age: <numberBetween(1, 1500)>
+
+
+App\Entity\User:
+  user_{1..20}:
+    firstname: <name()>
+    lastname: <name()>
+    age: <numberBetween(1, 120)>
+
+
+App\Entity\Playlist:
+  playlist_{1..20}:
+    titre: <name()>
+    nbMorceaux: <numberBetween(1, 1500)>
+    user: '@user_*'
+
+App\Entity\Album:
+  album_{1..20}:
+    titre: <name()>
+    auteur: <name()>
+
+App\Entity\Single:
+  single_{1..20}:
+    titre: <name()>
+    album: '@album_*'
+
+
+
+
